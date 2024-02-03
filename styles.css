@@ -1,0 +1,127 @@
+body {
+    background-color: #fff;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.5;
+    color: #4d4e53;
+}
+
+header {
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#navbar {
+    position: fixed; /* fixed at a position, doesn't move while scrolling */
+    top: 0;
+    left: 0;
+    min-width: 25%;
+    height: 100%; /* making it take up the full vertical length */
+    background:#f1f1f1;
+    border-right: solid;
+    border-color: #2a2a2a;
+}
+
+#navbar ul {
+    list-style-type: none; /* To remove the bullets on the list items*/
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* make it able to scroll if the content is bigger than the content */
+}
+
+
+#navbar li > a {
+    display: block; /* This is to make the links vertical, one on top of the other*/
+    text-decoration: none; /* remove the line under the link*/
+    color: #ff0000; /* changing link's text to red*/
+    padding: 8px 15px;
+    font-size: 15pt;   
+}
+
+#navbar li {
+    border-bottom: 1px solid rgb(120, 120, 120);
+    border-top: 1px solid rgb(120, 120, 120);
+}
+
+#navbar li:last-child {
+    border-bottom: none;  
+}
+
+/* change the link color on hover*/
+li a:hover {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+/* setting the active link effect */
+li a:active {
+    background-color: #f00000;
+    color: #353535;
+}
+
+/* setting the main element to the right of the entire body */
+#main-doc {
+    position: absolute;
+    display: block;
+    margin-left: 25%; /* setting this to the same value as the width of #navbar will fix it overlapping each other */
+    padding: 20px;
+}
+
+.main-section header {
+    text-align: left;
+    margin: 0;
+    display: block;
+}
+
+.main-section article {
+    display: block;
+    margin-left: 20px;
+    text-align: justify;
+}
+
+article li {
+    margin-bottom: 20px;
+}
+
+code {
+    border-radius: 5px;
+    display: block;
+    font-family: monospace;
+    white-space: pre-line;
+    background: #f5f5f5;
+    padding: 10px;
+}
+
+.blue-strings {
+    color: #0000ff;
+}
+
+.red-codes {
+    color: #ff0000;
+}
+
+/* making the navigation links scroll smoothly to the target setion */
+* {
+    scroll-behavior: smooth;
+}
+
+@media screen and (max-width:815px) {
+    #main-doc {
+        position: relative;
+        margin-left: 0;
+        margin-top: 270px;
+    }
+
+    #navbar {
+        position: absolute;
+        top: 0;
+        max-height: 250px;
+        width: 100%;
+        overflow: auto;
+        border-bottom: 2px solid;
+        z-index: 1;
+        background: #fff;
+
+    }
+}
